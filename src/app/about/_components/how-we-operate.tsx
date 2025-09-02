@@ -1,8 +1,8 @@
 export default function HowWeOperate() {
   return (
-    <section className="w-full bg-section-c">
+    <section className="w-full bg-[#0b1220]">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-        <div className="rounded-xl border border-zinc-800 bg-zinc-950/40 p-6">
+        <div className="rounded-xl border border-zinc-800 bg-[#0a1d3b] p-6">
           <h2 className="text-2xl font-semibold text-white">How we operate</h2>
           <ul className="mt-4 list-disc space-y-2 pl-6 text-zinc-300">
             <li>

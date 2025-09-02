@@ -2,7 +2,7 @@ import { BadgeCheck, Camera, ShieldCheck } from "lucide-react";
 
 export default function Certifications() {
   return (
-    <section className="w-full bg-section-c">
+    <section className="w-full bg-[#0b1220]">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
         <div className="rounded-xl border border-zinc-800 bg-zinc-950/40 p-6">
           <h2 className="text-2xl font-semibold text-white">
