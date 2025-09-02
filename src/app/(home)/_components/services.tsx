@@ -11,22 +11,26 @@ import {
   Clock,
 } from "lucide-react";
 import { SectionReveal } from "@/components/section-reveal";
+import Image from "next/image";
 
 const services = [
   {
     icon: Camera,
     title: "Live CCTV Monitoring",
     desc: "Continuous oversight across multi-cam layouts with proactive anomaly detection.",
+    image: "/images/home/live-cctv-monitoring.jpg",
   },
   {
     icon: Clock,
     title: "11PM–6AM Watch",
     desc: "Night-focused coverage to protect when the risk is highest and staffing is lean.",
+    image: "/images/home/night-watch.jpg",
   },
   {
     icon: Building2,
     title: "Shops & Offices",
     desc: "Deter theft, vandalism, and break-ins for commercial spaces.",
+    image: "/images/home/shops-&-offices.jpg",
   },
   {
     icon: Home,
@@ -83,24 +87,39 @@ export function Services() {
               className="group"
             >
               <Card
-                className="h-full overflow-hidden border border-zinc-800 bg-zinc-900/60 text-zinc-100 shadow-sm transition-all duration-300
+                className="relative h-full overflow-hidden border border-zinc-800 bg-zinc-900/60 text-zinc-100 shadow-sm transition-all duration-300
                          ring-1 ring-transparent hover:shadow-lg group-hover:ring-red-600/30 focus-within:ring-red-600/40
                          focus-within:outline-none"
               >
-                <CardHeader>
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="flex h-10 w-10 items-center justify-center rounded-md bg-zinc-800 ring-1 ring-zinc-700 transition-colors duration-300 group-hover:bg-zinc-700"
-                      aria-hidden="true"
-                    >
-                      <s.icon className="h-5 w-5 text-blue-500 transition-colors duration-300 group-hover:text-red-600" />
+                {s.image && (
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                )}
+                <div
+                  className={`absolute inset-0 bg-zinc-900/70 transition-colors duration-300 ${
+                    s.image ? "bg-zinc-950/70" : ""
+                  } group-hover:bg-zinc-950/60`}
+                />
+                <div className="relative">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="flex h-10 w-10 items-center justify-center rounded-md bg-zinc-800 ring-1 ring-zinc-700 transition-colors duration-300 group-hover:bg-zinc-700"
+                        aria-hidden="true"
+                      >
+                        <s.icon className="h-5 w-5 text-red-500 transition-colors duration-300 group-hover:text-red-600" />
+                      </div>
+                      <CardTitle className="text-lg">{s.title}</CardTitle>
                     </div>
-                    <CardTitle className="text-lg">{s.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-zinc-300">{s.desc}</p>
-                </CardContent>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-zinc-300">{s.desc}</p>
+                  </CardContent>
+                </div>
               </Card>
             </motion.div>
           ))}
