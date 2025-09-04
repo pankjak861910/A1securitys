@@ -29,7 +29,7 @@ const plans = [
   },
   {
     name: "6 Months",
-    price: 19000,
+    price: 21000,
     discount: 10, // percent
     period: "billed once",
     popular: true,
@@ -41,7 +41,7 @@ const plans = [
   },
   {
     name: "1 Year",
-    price: 32000,
+    price: 42000,
     discount: 20, // percent
     period: "billed once",
     popular: false,
