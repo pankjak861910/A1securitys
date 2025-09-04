@@ -2,42 +2,37 @@
 
 import type React from "react";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "A1 Security",
-  description: "24/7 Security Monitoring Services",
-};
+import { sendContactEmail } from "./_actions/send-contact-email";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const formData = new FormData(form);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
 
-    try {
-      setLoading(true);
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) throw new Error("Failed");
-      toast.success("Message sent successfully");
-      form.reset();
-    } catch {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
+    setLoading(true);
+    startTransition(async () => {
+      const res = await sendContactEmail({ name, email, message });
       setLoading(false);
-    }
+      if (res.success) {
+        toast.success("Message sent successfully");
+        form.reset();
+      } else {
+        toast.error(res.error || "Something went wrong. Please try again.");
+      }
+    });
   }
 
   return (
@@ -111,9 +106,9 @@ export default function ContactPage() {
               type="submit"
               size="lg"
               className="bg-red-600 hover:bg-red-700 text-white"
-              disabled={loading}
+              disabled={loading || isPending}
             >
-              {loading ? "Sending..." : "Send Message"}
+              {loading || isPending ? "Sending..." : "Send Message"}
             </Button>
           </form>
         </div>
