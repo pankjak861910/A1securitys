@@ -1,33 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# A1 Security and Monitoring
+
+This is the official website for A1 Security and Monitoring, a modern web application built with Next.js and TypeScript.
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/) (v15) with App Router & Turbopack
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Email:** [Nodemailer](https://nodemailer.com/) for contact form submissions
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Package Manager:** [Bun](https://bun.sh/)
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+Make sure you have [Bun](https://bun.sh/docs/installation) installed on your system.
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/pankjak861910/A1securitys.git
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd a1-security-and-monitoring
+    ```
+3.  Install the dependencies:
+    ```bash
+    bun install
+    ```
+
+### Environment Variables
+
+This project requires environment variables for the contact form functionality.
+
+1.  Create a `.env.local` file in the root of the project by copying the example file:
+    ```bash
+    cp example.env .env.local
+    ```
+2.  Update the `.env.local` file with your SMTP credentials:
+    ```
+    SMTP_EMAIL="your-email@example.com"
+    SMTP_PASSWORD="your-email-password"
+    ```
+
+### Running the Development Server
+
+To start the development server, run the following command:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+In the project directory, you can run:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `bun run dev`: Runs the app in development mode with Turbopack.
+- `bun run build`: Builds the app for production.
+- `bun run start`: Starts a production server.
+- `bun run lint`: Runs ESLint to check for code quality and errors.
 
 ## Deploy on Vercel
 
