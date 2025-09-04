@@ -2,15 +2,23 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import SectionReveal from "@/components/section-reveal";
 import { motion, Variants } from "framer-motion";
 import { Check } from "lucide-react";
+import Image from "next/image";
 
 const plans = [
   {
     name: "1 Month",
-    price: "₹3,500",
+    price: 3500,
+    discount: 0,
     period: "per month",
     popular: false,
     features: [
@@ -21,26 +29,27 @@ const plans = [
   },
   {
     name: "6 Months",
-    price: "₹19,000",
+    price: 19000,
+    discount: 10, // percent
     period: "billed once",
     popular: true,
     features: [
-      "Priority monitoring queue",
-      "Weekly analytics summary",
-      "Incident evidence clipping",
-      "5% renewal discount",
+      "Nightly CCTV monitoring (11 PM – 6 AM)",
+      "Incident alerts via call + WhatsApp",
+      "10% renewal discount",
     ],
   },
   {
     name: "1 Year",
-    price: "₹32,000",
+    price: 32000,
+    discount: 20, // percent
     period: "billed once",
     popular: false,
     features: [
-      "Dedicated supervisor line",
-      "Monthly health checks",
+      "Nightly CCTV monitoring (11 PM – 6 AM)",
+      "Incident alerts via call + WhatsApp",
       "Evidence archive (12 months)",
-      "10% renewal discount",
+      "20% renewal discount",
     ],
   },
 ];
@@ -116,28 +125,66 @@ export default function PlansSection() {
                         {plan.period}
                       </span>
                     </CardTitle>
-                    <div className="mt-2 text-3xl font-bold text-white">
-                      {plan.price}
+                    <div className="mt-2 flex items-center gap-2">
+                      {plan.discount > 0 ? (
+                        <>
+                          <span className="text-xl font-semibold text-zinc-400 line-through">
+                            ₹{plan.price.toLocaleString()}
+                          </span>
+                          <span className="text-3xl font-bold text-white">
+                            ₹
+                            {(
+                              plan.price *
+                              (1 - plan.discount / 100)
+                            ).toLocaleString(undefined, {
+                              maximumFractionDigits: 0,
+                            })}
+                          </span>
+                          <span className="ml-1 rounded bg-red-600/20 px-2 py-0.5 text-sm text-red-400 font-semibold">
+                            {plan.discount}% OFF
+                          </span>
+                        </>
+                      ) : (
+                        <span className="text-3xl font-bold text-white">
+                          ₹{plan.price.toLocaleString()}
+                        </span>
+                      )}
                     </div>
                   </CardHeader>
-                  <CardContent className="flex flex-col gap-4">
-                    <ul className="flex flex-col gap-2">
-                      {plan.features.map((f) => (
-                        <li
-                          key={f}
-                          className="flex items-start gap-2 text-zinc-300"
+                  <CardContent className="flex flex-col justify-between h-full gap-4">
+                    <div>
+                      <ul className="flex flex-col gap-2">
+                        {plan.features.map((f) => (
+                          <li
+                            key={f}
+                            className="flex items-start gap-2 text-zinc-300"
+                          >
+                            <Check className="mt-0.5 size-4 text-red-500" />
+                            <span>{f}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button
+                          className="w-full bg-red-600 text-white hover:bg-red-700 focus-visible:ring-red-600"
+                          variant="default"
                         >
-                          <Check className="mt-0.5 size-4 text-red-500" />
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button
-                      className="mt-4 w-full bg-red-600 text-white hover:bg-red-700 focus-visible:ring-red-600"
-                      variant="default"
-                    >
-                      Get Started
-                    </Button>
+                          Get Started
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="flex flex-col items-center">
+                        <DialogTitle>Scan to Pay</DialogTitle>
+                        <Image
+                          src="/images/payment-qr.jpg"
+                          alt="Payment QR"
+                          className="max-w-xs w-full h-auto rounded shadow"
+                          width={300}
+                          height={300}
+                        />
+                      </DialogContent>
+                    </Dialog>
                   </CardContent>
                 </Card>
               </motion.div>

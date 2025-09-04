@@ -60,7 +60,7 @@ export function Services() {
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-balance text-3xl font-semibold md:text-4xl">
-            Services tailored to your site
+            A1 Security Services
           </h2>
           <p className="mt-3 text-white/70">
             From retail to warehouses, we configure monitoring layouts and

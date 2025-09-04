@@ -8,6 +8,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "A1 Security",
+  description: "24/7 Security Monitoring Services",
+};
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);

@@ -6,7 +6,7 @@ import Link from "next/link";
 const FloatingWhatsApp = () => {
   return (
     <Link
-      href="https://wa.me/1234567890" // Replace with your WhatsApp number
+      href="https://wa.me/+919876543210"
       className="fixed bottom-8 right-8 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors"
       target="_blank"
       rel="noopener noreferrer"

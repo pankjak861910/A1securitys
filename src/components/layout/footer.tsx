@@ -81,8 +81,8 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-white">Contact</h3>
             <ul className="grid gap-2 text-sm not-italic">
               <li>
-                <a href="tel:+11234567890" className="hover:text-white">
-                  +1 (123) 456-7890
+                <a href="tel:+919876543210" className="hover:text-white">
+                  +91 9876543210
                 </a>
               </li>
               <li>
