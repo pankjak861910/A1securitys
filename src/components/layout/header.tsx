@@ -12,7 +12,7 @@ const nav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
-  { href: "Stel:+919876543210", label: "+91 9876543210" },
+  { href: "tel:+919876543210", label: "+91 9876543210" },
 ];
 
 export default function Header() {
