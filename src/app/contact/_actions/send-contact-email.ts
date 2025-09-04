@@ -31,6 +31,12 @@ export async function sendContactEmail({
     return { success: true };
   } catch (error) {
     console.error("Error sending contact email:", error);
-    return { success: false, error: (error as Error).message };
+    return {
+      success: false,
+      error:
+        process.env.NODE_ENV === "development"
+          ? (error as Error).message
+          : "Something went wrong. Please try again later.",
+    };
   }
 }
