@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us - A1 Security",
+  title: "Contact Us - A1 Securitys",
   description: "24/7 Security Monitoring Services",
 };
 

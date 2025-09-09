@@ -7,7 +7,7 @@ import Intro from "./_components/intro";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About - A1 Security",
+  title: "About - A1 Securitys",
   description: "24/7 Security Monitoring Services",
 };
 

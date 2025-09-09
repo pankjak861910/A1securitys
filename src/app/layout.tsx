@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "A1 Security",
+  title: "A1 Securitys",
   description: "24/7 Security Monitoring Services",
 };
 

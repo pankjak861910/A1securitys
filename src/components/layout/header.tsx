@@ -24,17 +24,17 @@ export default function Header() {
         <Link
           href="/"
           className="flex items-center gap-2"
-          aria-label="A1 Security Home"
+          aria-label="A1 Securitys Home"
         >
           <Image
             src="/images/layout/logo.png"
-            alt="A1 Security logo"
+            alt="A1 Securitys logo"
             width={32}
             height={32}
             className="h-8 w-8"
             priority
           />
-          <span className="font-semibold text-zinc-100">A1 Security</span>
+          <span className="font-semibold text-zinc-100">A1 Securitys</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">

@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { PhoneCall, ScanSearch, BellRing, ShieldCheck } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { SectionReveal } from "@/components/section-reveal"
+import { motion } from "framer-motion";
+import { PhoneCall, ScanSearch, BellRing, ShieldCheck } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionReveal } from "@/components/section-reveal";
 
 const steps = [
   {
@@ -26,20 +26,27 @@ const steps = [
     title: "4. Reports & Review",
     desc: "Nightly patrol notes and monthly summaries to keep you in the loop.",
   },
-]
+];
 
 const cardVariants = {
   initial: { opacity: 0, y: 16, scale: 0.98 },
   inView: { opacity: 1, y: 0, scale: 1 },
-}
+};
 
 export function HowItWorks() {
   return (
-    <SectionReveal aria-label="How it works" className="bg-section-c text-white">
+    <SectionReveal
+      aria-label="How it works"
+      className="bg-section-c text-white"
+    >
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-balance text-3xl font-semibold md:text-4xl">How A1 Security works</h2>
-          <p className="mt-3 text-white/70">Clear steps, transparent communication, measurable outcomes.</p>
+          <h2 className="text-balance text-3xl font-semibold md:text-4xl">
+            How A1 Securitys works
+          </h2>
+          <p className="mt-3 text-white/70">
+            Clear steps, transparent communication, measurable outcomes.
+          </p>
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 md:gap-6">
@@ -50,7 +57,12 @@ export function HowItWorks() {
               initial="initial"
               whileInView="inView"
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ type: "spring", stiffness: 120, damping: 18, delay: i * 0.06 }}
+              transition={{
+                type: "spring",
+                stiffness: 120,
+                damping: 18,
+                delay: i * 0.06,
+              }}
               whileHover={{ y: -4, scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
               className="group"
@@ -79,5 +91,5 @@ export function HowItWorks() {
         </div>
       </div>
     </SectionReveal>
-  )
+  );
 }

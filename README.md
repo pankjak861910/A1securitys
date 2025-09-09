@@ -1,6 +1,6 @@
-# A1 Security and Monitoring
+# A1 Securitys and Monitoring
 
-This is the official website for A1 Security and Monitoring, a modern web application built with Next.js and TypeScript.
+This is the official website for A1 Securitys and Monitoring, a modern web application built with Next.js and TypeScript.
 
 ## Tech Stack
 

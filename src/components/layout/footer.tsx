@@ -12,12 +12,12 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <Image
                 src="/images/layout/logo.png"
-                alt="A1 Security shield logo"
+                alt="A1 Securitys shield logo"
                 width={40}
                 height={40}
                 className="h-10 w-10 rounded bg-zinc-900"
               />
-              <p className="text-lg font-semibold text-white">A1 Security</p>
+              <p className="text-lg font-semibold text-white">A1 Securitys</p>
             </div>
             <p className="text-sm leading-6 text-zinc-400">
               Nightly CCTV monitoring for shops, homes, and warehouses. We watch
@@ -152,7 +152,7 @@ export default function Footer() {
       <div className="border-t border-zinc-800">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 md:flex-row">
           <p className="text-xs text-zinc-400">
-            © {new Date().getFullYear()} A1 Security — Protecting what matters.
+            © {new Date().getFullYear()} A1 Securitys — Protecting what matters.
           </p>
           <div className="flex items-center gap-4 text-xs">
             <Link href="/privacy" className="hover:text-white">
