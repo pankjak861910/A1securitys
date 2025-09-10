@@ -81,20 +81,21 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-white">Contact</h3>
             <ul className="grid gap-2 text-sm not-italic">
               <li>
-                <a href="tel:+919876543210" className="hover:text-white">
-                  +91 9876543210
+                <a href="tel:+919351706089" className="hover:text-white">
+                  +91 93517 06089
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:hello@a1security.com"
+                  href="mailto:contact@a1securitys.com"
                   className="hover:text-white"
                 >
-                  hello@a1security.com
+                  contact@a1securitys.com
                 </a>
               </li>
               <li className="text-zinc-400">
-                123 Secure Ave, Suite 101, Your City
+                5R2V+8HH, Jhalra Rd, Vyas Colony, Kuchaman City,
+                Rajasthan 341508
               </li>
             </ul>
             <div className="mt-2 flex items-center gap-3">
