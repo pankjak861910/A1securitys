@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "A1 Securitys",
-  description: "24/7 Security Monitoring Services",
-  icons: {
-    icon: "/icons/favicon.ico",
+  title: {
+    default: "A1 Securitys",
+    template: "%s - A1 Securitys",
   },
+  description: "24/7 Security Monitoring Services",
 };
 
 export default function RootLayout({
