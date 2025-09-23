@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "A1 Securitys",
+    default: "A1 Securitys Night Monitoring",
     template: "%s - A1 Securitys",
   },
   description: "24/7 Security Monitoring Services",
